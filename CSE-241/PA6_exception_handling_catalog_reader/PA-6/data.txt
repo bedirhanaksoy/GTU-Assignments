@@ -1,0 +1,7 @@
+music
+"Cokertme Turkusu" "Ahmet Aslan" "1998" "Turku"
+"My life be like" "Grits" "2011" "Rap"
+"We own it" "Wiz Khalifa" "2014" "Rap"
+"Vicdanin affetsin" "Merve Ozbey" "2012" "Pop"
+"It was a good day" "Ice Cube" "2017" 
+"Vicdanin affetsin" "bedirhan aksoy" "2023" "Duplicate"

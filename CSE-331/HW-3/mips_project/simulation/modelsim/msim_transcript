@@ -1,0 +1,382 @@
+# ERROR: No extended dataflow license exists
+# do mips_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /home/aksoy/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/mips.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/mips.v 
+# -- Compiling module mips
+# 
+# Top level modules:
+# 	mips
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/control_unit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/control_unit.v 
+# -- Compiling module control_unit
+# 
+# Top level modules:
+# 	control_unit
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/alu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/alu_control.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/alu_control.v 
+# -- Compiling module alu_control
+# 
+# Top level modules:
+# 	alu_control
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/sign_extend.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/sign_extend.v 
+# -- Compiling module sign_extend
+# 
+# Top level modules:
+# 	sign_extend
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/shift_left_2.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/shift_left_2.v 
+# -- Compiling module shift_left_2
+# 
+# Top level modules:
+# 	shift_left_2
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/thirty_two_bit_subtractor.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/thirty_two_bit_subtractor.v 
+# -- Compiling module thirty_two_bit_subtractor
+# 
+# Top level modules:
+# 	thirty_two_bit_subtractor
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/thirty_two_bit_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/thirty_two_bit_adder.v 
+# -- Compiling module thirty_two_bit_adder
+# 
+# Top level modules:
+# 	thirty_two_bit_adder
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/second_level_CLL.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/second_level_CLL.v 
+# -- Compiling module second_level_CLL
+# 
+# Top level modules:
+# 	second_level_CLL
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/one_bit_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/one_bit_adder.v 
+# -- Compiling module one_bit_adder
+# 
+# Top level modules:
+# 	one_bit_adder
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/my_xor.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/my_xor.v 
+# -- Compiling module my_xor
+# 
+# Top level modules:
+# 	my_xor
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/my_twos_complement.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/my_twos_complement.v 
+# -- Compiling module my_twos_complement
+# 
+# Top level modules:
+# 	my_twos_complement
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/my_or.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/my_or.v 
+# -- Compiling module my_or
+# 
+# Top level modules:
+# 	my_or
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/my_nor.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/my_nor.v 
+# -- Compiling module my_nor
+# 
+# Top level modules:
+# 	my_nor
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/my_and.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/my_and.v 
+# -- Compiling module my_and
+# 
+# Top level modules:
+# 	my_and
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/is_less_than.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/is_less_than.v 
+# -- Compiling module is_less_than
+# 
+# Top level modules:
+# 	is_less_than
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/four_bit_CLL.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/four_bit_CLL.v 
+# -- Compiling module four_bit_CLL
+# 
+# Top level modules:
+# 	four_bit_CLL
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/four_bit_CLA.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/four_bit_CLA.v 
+# -- Compiling module four_bit_CLA
+# 
+# Top level modules:
+# 	four_bit_CLA
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/_8x1Mux.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/_8x1Mux.v 
+# -- Compiling module _8x1Mux
+# 
+# Top level modules:
+# 	_8x1Mux
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/move.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/move.v 
+# -- Compiling module move
+# 
+# Top level modules:
+# 	move
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/write_reg_input_mux.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/write_reg_input_mux.v 
+# -- Compiling module write_reg_input_mux
+# 
+# Top level modules:
+# 	write_reg_input_mux
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/alu_input_mux.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/alu_input_mux.v 
+# -- Compiling module alu_input_mux
+# 
+# Top level modules:
+# 	alu_input_mux
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/PC_four_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/PC_four_adder.v 
+# -- Compiling module PC_four_adder
+# 
+# Top level modules:
+# 	PC_four_adder
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/PC_immediate_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/PC_immediate_adder.v 
+# -- Compiling module PC_immediate_adder
+# 
+# Top level modules:
+# 	PC_immediate_adder
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/PC_mux.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/PC_mux.v 
+# -- Compiling module PC_mux
+# 
+# Top level modules:
+# 	PC_mux
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/write_data_mux.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/write_data_mux.v 
+# -- Compiling module write_data_mux
+# 
+# Top level modules:
+# 	write_data_mux
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/zero_bit_branch_operations.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/zero_bit_branch_operations.v 
+# -- Compiling module zero_bit_branch_operations
+# 
+# Top level modules:
+# 	zero_bit_branch_operations
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/jump_mux.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:53 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/jump_mux.v 
+# -- Compiling module jump_mux
+# 
+# Top level modules:
+# 	jump_mux
+# End time: 18:56:53 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/register_block.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:54 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/register_block.v 
+# -- Compiling module register_block
+# ** Warning: /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/register_block.v(15): (vlog-2182) 'registers' might be read before written in always_comb or always @* block.
+# 
+# Top level modules:
+# 	register_block
+# End time: 18:56:54 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/memory_block.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:54 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/memory_block.v 
+# -- Compiling module memory_block
+# ** Warning: /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/memory_block.v(14): (vlog-2182) 'memory' might be read before written in always_comb or always @* block.
+# 
+# Top level modules:
+# 	memory_block
+# End time: 18:56:54 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/instruction_block.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:54 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/instruction_block.v 
+# -- Compiling module instruction_block
+# 
+# Top level modules:
+# 	instruction_block
+# End time: 18:56:54 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3\ (2)/mips_project {/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/test_mips.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:56:54 on Jan 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project" /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/test_mips.v 
+# -- Compiling module test_mips
+# 
+# Top level modules:
+# 	test_mips
+# End time: 18:56:54 on Jan 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  test_mips
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" test_mips 
+# Start time: 18:56:54 on Jan 19,2024
+# Loading work.test_mips
+# Loading work.mips
+# Loading work.instruction_block
+# Loading work.control_unit
+# Loading work.write_reg_input_mux
+# Loading work.register_block
+# Loading work.sign_extend
+# Loading work.alu_control
+# Loading work.alu_input_mux
+# Loading work.alu
+# Loading work.my_and
+# Loading work.my_or
+# Loading work.is_less_than
+# Loading work.thirty_two_bit_subtractor
+# Loading work.my_twos_complement
+# Loading work.thirty_two_bit_adder
+# Loading work.four_bit_CLA
+# Loading work.one_bit_adder
+# Loading work.four_bit_CLL
+# Loading work.second_level_CLL
+# Loading work.my_xor
+# Loading work.my_nor
+# Loading work.move
+# Loading work._8x1Mux
+# Loading work.shift_left_2
+# Loading work.PC_four_adder
+# Loading work.PC_immediate_adder
+# Loading work.zero_bit_branch_operations
+# Loading work.PC_mux
+# Loading work.jump_mux
+# Loading work.memory_block
+# Loading work.write_data_mux
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $finish    : /home/aksoy/Desktop/test/BedirhanOmerAksoy_200104004074_HW3 (2)/mips_project/test_mips.v(25)
+#    Time: 240 ps  Iteration: 0  Instance: /test_mips
+# End time: 18:56:57 on Jan 19,2024, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0

@@ -1,0 +1,2 @@
+Ödev PDF'inde verilen syntax bilgisine dayanarak, double (125b36) türü haricinde herhangi bir integer inputu error olarak değerlendirildi.
+(ab+bc) tarzındaki ifadeler g++ dilinin lisp-like tarzı bir dil olduğu belirtildiği için error olark değerlendirildi.

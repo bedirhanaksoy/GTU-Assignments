@@ -1,0 +1,449 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/simulation/modelsim
+v_8x1Mux
+Z1 !s110 1702231882
+!i10b 1
+!s100 ?l1f2IAY0VN`a_i?iGAHO1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I5l_hbP_^[jOUh2oV25a5O2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1702205083
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/_8x1Mux.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/_8x1Mux.v
+!i122 16
+L0 1 21
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1702231882.000000
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/_8x1Mux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/_8x1Mux.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2
+Z8 tCvgOpt 0
+n@_8x1@mux
+vALU
+Z9 !s110 1702231881
+!i10b 1
+!s100 ha5VDfhZCj2C8iM51MDJP0
+R2
+I`H1RgO2FLRm6>T8K0GO?[2
+R3
+R0
+w1702209925
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v
+!i122 2
+L0 1 48
+R4
+r1
+!s85 0
+31
+Z10 !s108 1702231881.000000
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v|
+!i113 1
+R6
+R7
+R8
+n@a@l@u
+vALU_testbench
+R1
+!i10b 1
+!s100 N=<;CkClJZX>4bihHj@1S0
+R2
+IOCaN33F4H7WJDhSHD;:R31
+R3
+R0
+w1702209734
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU_testbench.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU_testbench.v
+!i122 17
+L0 1 93
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU_testbench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU_testbench.v|
+!i113 1
+R6
+R7
+R8
+n@a@l@u_testbench
+vfour_bit_CLA
+R9
+!i10b 1
+!s100 a8MfM2R2hFV[_?Bzf4Fg`0
+R2
+I]IkEl_O1I=ejC?OnZf<R:2
+R3
+R0
+w1701745522
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v
+!i122 3
+Z11 L0 1 25
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v|
+!i113 1
+R6
+R7
+R8
+nfour_bit_@c@l@a
+vfour_bit_CLL
+R9
+!i10b 1
+!s100 EBo0`[c;V6ja<;YOg0ALG1
+R2
+IbUhZh1Bl2Y00FLfEkGVC:3
+R3
+R0
+w1701741838
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLL.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLL.v
+!i122 4
+L0 1 18
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLL.v|
+!i113 1
+R6
+R7
+R8
+nfour_bit_@c@l@l
+vis_less_than
+R9
+!i10b 1
+!s100 fcOhoklE5VdA92zegZ15O2
+R2
+I:HFEQade_PN_ocLdXMlzV1
+R3
+R0
+w1702155694
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/is_less_than.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/is_less_than.v
+!i122 5
+Z12 L0 1 10
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/is_less_than.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/is_less_than.v|
+!i113 1
+R6
+R7
+R8
+vmod
+R1
+!i10b 1
+!s100 TV><JWTEAV3::9lD7cAW>3
+R2
+If67GX[6D4H@@5JGlS7^j43
+R3
+R0
+w1702208047
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod.v
+!i122 13
+R11
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod.v|
+!i113 1
+R6
+R7
+R8
+vmod_cu
+R1
+!i10b 1
+!s100 @P=]=Q`2FNQNzGb>@@]Uz2
+R2
+IjP5aZD;MmhMVzhbfRAIbT1
+R3
+R0
+w1702208470
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_cu.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_cu.v
+!i122 12
+L0 1 66
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_cu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_cu.v|
+!i113 1
+R6
+R7
+R8
+vmod_dp
+R9
+!i10b 1
+!s100 :mDXeZafmZmLod;B=7b:72
+R2
+IbfZ6jMU7fMW_T6LBI[NR`3
+R3
+R0
+w1702210767
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_dp.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_dp.v
+!i122 11
+Z13 L0 1 34
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_dp.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_dp.v|
+!i113 1
+R6
+R7
+R8
+vmy_and
+R9
+!i10b 1
+!s100 Y_Y4i8j^RK_7Bcn`@f:Mk2
+R2
+IPmMU4M[338GU<BkH>aXFB1
+R3
+R0
+w1701780948
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_and.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_and.v
+!i122 10
+R13
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_and.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_and.v|
+!i113 1
+R6
+R7
+R8
+vmy_nor
+R9
+!i10b 1
+!s100 `Y4TcL56KEk0mzibJE3j00
+R2
+IfE<4j9iT1X;:4hZzkmQWS0
+R3
+R0
+w1701781740
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_nor.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_nor.v
+!i122 9
+R13
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_nor.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_nor.v|
+!i113 1
+R6
+R7
+R8
+vmy_or
+R9
+!i10b 1
+!s100 =2RcL[kFe_]Y8hNIhi9WC2
+R2
+IZiK0:7jgXSB>_n?Xe]QZB0
+R3
+R0
+w1701781218
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_or.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_or.v
+!i122 8
+Z14 L0 1 36
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_or.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_or.v|
+!i113 1
+R6
+R7
+R8
+vmy_twos_complement
+R9
+!i10b 1
+!s100 lYggPf^A^WfFPF^g5hiD92
+R2
+I7GY9U>LMQ8hEMB9^2zF<=2
+R3
+R0
+w1701785491
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_twos_complement.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_twos_complement.v
+!i122 7
+L0 1 40
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_twos_complement.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_twos_complement.v|
+!i113 1
+R6
+R7
+R8
+vmy_xor
+R9
+!i10b 1
+!s100 1?S0??S0MCm]:A?f_M?Bn1
+R2
+Iig9dW;KcJ<Pl_mgF>GTA`2
+R3
+R0
+w1701781657
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_xor.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_xor.v
+!i122 6
+R14
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_xor.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_xor.v|
+!i113 1
+R6
+R7
+R8
+vone_bit_adder
+R1
+!i10b 1
+!s100 l[=X4iVdegjiTDgC1cF_83
+R2
+I;YGF_X>Piifg;B=eZDSoa0
+R3
+R0
+w1701738617
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/one_bit_adder.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/one_bit_adder.v
+!i122 14
+R12
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/one_bit_adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/one_bit_adder.v|
+!i113 1
+R6
+R7
+R8
+vsecond_level_CLL
+R1
+!i10b 1
+!s100 Y]d<I`aHfTQb4]iEJ?id<3
+R2
+IjRm]G]MEoLBm?cLA]nkR22
+R3
+R0
+w1701743036
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/second_level_CLL.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/second_level_CLL.v
+!i122 15
+L0 1 29
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/second_level_CLL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/second_level_CLL.v|
+!i113 1
+R6
+R7
+R8
+nsecond_level_@c@l@l
+vthirty_two_bit_adder
+R9
+!i10b 1
+!s100 `l0da=j:BzS`AUM8emAbT1
+R2
+I;:7mhiN^H:HLEd[_C0K`K1
+R3
+R0
+w1701746595
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v
+!i122 1
+L0 1 22
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v|
+!i113 1
+R6
+R7
+R8
+vthirty_two_bit_subtractor
+R9
+!i10b 1
+!s100 1QlPEAKkY2omBJCC8MU3h2
+R2
+I;`JG9IoB^^SNAg4`iWW:H0
+R3
+R0
+w1701871838
+8/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_subtractor.v
+F/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_subtractor.v
+!i122 0
+L0 1 9
+R4
+r1
+!s85 0
+31
+R10
+!s107 /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_subtractor.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/BedirhanOmerAksoy_HW2|/home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_subtractor.v|
+!i113 1
+R6
+R7
+R8

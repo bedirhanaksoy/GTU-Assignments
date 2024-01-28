@@ -1,1 +1,1 @@
-# Gebze Technical University Assignment Projects
+# Gebze Technical University Project Assignments

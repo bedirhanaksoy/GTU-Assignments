@@ -1,0 +1,5 @@
+module mipstestbench(input clk);
+
+mips(clk);
+
+endmodule

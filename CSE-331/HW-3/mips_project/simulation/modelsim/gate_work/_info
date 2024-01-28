@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/aksoy/Desktop/homeworks/mips_project/simulation/modelsim
+vmips
+Z1 !s110 1705500762
+!i10b 1
+!s100 =^8FIX662ccz`n;[XakO53
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I`NYfdL8><11?MPz]0=>ND2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1705500752
+8mips.vo
+Fmips.vo
+!i122 0
+L0 32 58
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1705500762.000000
+!s107 mips.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|mips.vo|
+!i113 1
+Z6 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+.
+Z7 tCvgOpt 0
+vtest_mips
+R1
+!i10b 1
+!s100 9hZQ?RDHFknL_O@aRb[k63
+R2
+I]LF7DG_BjMk63:V`HcjS73
+R3
+R0
+w1705499969
+8/home/aksoy/Desktop/homeworks/mips_project/test_mips.v
+F/home/aksoy/Desktop/homeworks/mips_project/test_mips.v
+!i122 1
+L0 1 23
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/aksoy/Desktop/homeworks/mips_project/test_mips.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/aksoy/Desktop/homeworks/mips_project|/home/aksoy/Desktop/homeworks/mips_project/test_mips.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+/home/aksoy/Desktop/homeworks/mips_project
+R7

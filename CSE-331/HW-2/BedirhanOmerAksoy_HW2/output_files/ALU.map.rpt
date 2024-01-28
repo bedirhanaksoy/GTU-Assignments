@@ -1,0 +1,1007 @@
+Analysis & Synthesis report for ALU
+Sun Dec 10 21:10:14 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ALU|mod:mod1|mod_cu:modcu1|curr_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1"
+ 13. Port Connectivity Checks: "thirty_two_bit_subtractor:sub1"
+ 14. Port Connectivity Checks: "thirty_two_bit_adder:adder1"
+ 15. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1"
+ 16. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8"
+ 17. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7"
+ 18. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6"
+ 19. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5"
+ 20. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4"
+ 21. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3"
+ 22. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2"
+ 23. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|four_bit_CLL:CLL1"
+ 24. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add1"
+ 25. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1"
+ 26. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1"
+ 27. Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+ 31. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Dec 10 21:10:14 2023       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; ALU                                         ;
+; Top-level Entity Name           ; ALU                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 65                                          ;
+; Total pins                      ; 101                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; ALU                ; ALU                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------+---------+
+; thirty_two_bit_subtractor.v      ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_subtractor.v ;         ;
+; thirty_two_bit_adder.v           ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v      ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v                       ;         ;
+; four_bit_CLA.v                   ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v              ;         ;
+; four_bit_CLL.v                   ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLL.v              ;         ;
+; is_less_than.v                   ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/is_less_than.v              ;         ;
+; my_xor.v                         ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_xor.v                    ;         ;
+; my_twos_complement.v             ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_twos_complement.v        ;         ;
+; my_or.v                          ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_or.v                     ;         ;
+; my_nor.v                         ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_nor.v                    ;         ;
+; my_and.v                         ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_and.v                    ;         ;
+; mod_dp.v                         ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_dp.v                    ;         ;
+; mod_cu.v                         ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_cu.v                    ;         ;
+; mod.v                            ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod.v                       ;         ;
+; one_bit_adder.v                  ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/one_bit_adder.v             ;         ;
+; second_level_CLL.v               ; yes             ; User Verilog HDL File        ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/second_level_CLL.v          ;         ;
+; _8x1Mux.v                        ; yes             ; Auto-Found Verilog HDL File  ; /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/_8x1Mux.v                   ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimate of Logic utilization (ALMs needed) ; 258             ;
+;                                             ;                 ;
+; Combinational ALUT usage for logic          ; 376             ;
+;     -- 7 input functions                    ; 21              ;
+;     -- 6 input functions                    ; 114             ;
+;     -- 5 input functions                    ; 94              ;
+;     -- 4 input functions                    ; 65              ;
+;     -- <=3 input functions                  ; 82              ;
+;                                             ;                 ;
+; Dedicated logic registers                   ; 65              ;
+;                                             ;                 ;
+; I/O pins                                    ; 101             ;
+;                                             ;                 ;
+; Total DSP Blocks                            ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; select[1]~input ;
+; Maximum fan-out                             ; 65              ;
+; Total fan-out                               ; 2162            ;
+; Average fan-out                             ; 3.36            ;
++---------------------------------------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                               ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                            ; Entity Name               ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
+; |ALU                                         ; 376 (0)             ; 65 (0)                    ; 0                 ; 0          ; 101  ; 0            ; |ALU                                                                                                                                           ; ALU                       ; work         ;
+;    |_8x1Mux:mux0|                            ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux0                                                                                                                              ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux10|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux10                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux11|                           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux11                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux12|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux12                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux13|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux13                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux14|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux14                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux15|                           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux15                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux16|                           ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux16                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux17|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux17                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux18|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux18                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux19|                           ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux19                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux1|                            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux1                                                                                                                              ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux20|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux20                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux21|                           ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux21                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux22|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux22                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux23|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux23                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux24|                           ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux24                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux25|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux25                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux26|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux26                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux27|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux27                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux28|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux28                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux29|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux29                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux2|                            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux2                                                                                                                              ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux30|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux30                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux31|                           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux31                                                                                                                             ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux3|                            ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux3                                                                                                                              ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux4|                            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux4                                                                                                                              ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux5|                            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux5                                                                                                                              ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux6|                            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux6                                                                                                                              ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux7|                            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux7                                                                                                                              ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux8|                            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux8                                                                                                                              ; _8x1Mux                   ; work         ;
+;    |_8x1Mux:mux9|                            ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|_8x1Mux:mux9                                                                                                                              ; _8x1Mux                   ; work         ;
+;    |is_less_than:lt_1|                       ; 64 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1                                                                                                                         ; is_less_than              ; work         ;
+;       |thirty_two_bit_subtractor:sub|        ; 64 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub                                                                                           ; thirty_two_bit_subtractor ; work         ;
+;          |my_twos_complement:tws1|           ; 34 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1                                                                   ; my_twos_complement        ; work         ;
+;             |thirty_two_bit_adder:adder1|    ; 34 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1                                       ; thirty_two_bit_adder      ; work         ;
+;                |four_bit_CLA:CLA1|           ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1                     ; four_bit_CLA              ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add3  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add4  ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA2|           ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2                     ; four_bit_CLA              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add1  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add3  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add4  ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA3|           ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3                     ; four_bit_CLA              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|one_bit_adder:add1  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|one_bit_adder:add2  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|one_bit_adder:add3  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|one_bit_adder:add4  ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA4|           ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4                     ; four_bit_CLA              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add1  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add2  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add3  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add4  ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA5|           ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5                     ; four_bit_CLA              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|one_bit_adder:add1  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|one_bit_adder:add2  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|one_bit_adder:add3  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|one_bit_adder:add4  ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA6|           ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6                     ; four_bit_CLA              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|one_bit_adder:add1  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|one_bit_adder:add2  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|one_bit_adder:add3  ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA7|           ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7                     ; four_bit_CLA              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|one_bit_adder:add1  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|one_bit_adder:add2  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|one_bit_adder:add3  ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA8|           ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8                     ; four_bit_CLA              ; work         ;
+;                   |four_bit_CLL:CLL1|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|four_bit_CLL:CLL1   ; four_bit_CLL              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add1  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add2  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add3  ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add4  ; one_bit_adder             ; work         ;
+;                |second_level_CLL:CLL1|       ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|second_level_CLL:CLL1                 ; second_level_CLL          ; work         ;
+;          |thirty_two_bit_adder:adder1|       ; 30 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1                                                               ; thirty_two_bit_adder      ; work         ;
+;             |four_bit_CLA:CLA2|              ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2                                             ; four_bit_CLA              ; work         ;
+;                |one_bit_adder:add1|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add1                          ; one_bit_adder             ; work         ;
+;                |one_bit_adder:add2|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add2                          ; one_bit_adder             ; work         ;
+;             |four_bit_CLA:CLA3|              ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3                                             ; four_bit_CLA              ; work         ;
+;                |one_bit_adder:add4|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|one_bit_adder:add4                          ; one_bit_adder             ; work         ;
+;             |four_bit_CLA:CLA4|              ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4                                             ; four_bit_CLA              ; work         ;
+;                |one_bit_adder:add4|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add4                          ; one_bit_adder             ; work         ;
+;             |four_bit_CLA:CLA5|              ; 2 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5                                             ; four_bit_CLA              ; work         ;
+;                |one_bit_adder:add2|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|one_bit_adder:add2                          ; one_bit_adder             ; work         ;
+;             |four_bit_CLA:CLA6|              ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6                                             ; four_bit_CLA              ; work         ;
+;             |four_bit_CLA:CLA7|              ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7                                             ; four_bit_CLA              ; work         ;
+;             |four_bit_CLA:CLA8|              ; 3 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8                                             ; four_bit_CLA              ; work         ;
+;                |one_bit_adder:add2|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add2                          ; one_bit_adder             ; work         ;
+;             |second_level_CLL:CLL1|          ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|second_level_CLL:CLL1                                         ; second_level_CLL          ; work         ;
+;    |mod:mod1|                                ; 119 (0)             ; 65 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1                                                                                                                                  ; mod                       ; work         ;
+;       |mod_cu:modcu1|                        ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_cu:modcu1                                                                                                                    ; mod_cu                    ; work         ;
+;       |mod_dp:moddp1|                        ; 118 (6)             ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1                                                                                                                    ; mod_dp                    ; work         ;
+;          |is_less_than:is_lt1|               ; 35 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1                                                                                                ; is_less_than              ; work         ;
+;             |thirty_two_bit_subtractor:sub|  ; 35 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub                                                                  ; thirty_two_bit_subtractor ; work         ;
+;                |thirty_two_bit_adder:adder1| ; 35 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1                                      ; thirty_two_bit_adder      ; work         ;
+;                   |four_bit_CLA:CLA1|        ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1                    ; four_bit_CLA              ; work         ;
+;                      |one_bit_adder:add4|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add4 ; one_bit_adder             ; work         ;
+;                   |four_bit_CLA:CLA2|        ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2                    ; four_bit_CLA              ; work         ;
+;                      |one_bit_adder:add1|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add1 ; one_bit_adder             ; work         ;
+;                      |one_bit_adder:add2|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add2 ; one_bit_adder             ; work         ;
+;                   |four_bit_CLA:CLA3|        ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3                    ; four_bit_CLA              ; work         ;
+;                      |one_bit_adder:add4|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|one_bit_adder:add4 ; one_bit_adder             ; work         ;
+;                   |four_bit_CLA:CLA4|        ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4                    ; four_bit_CLA              ; work         ;
+;                      |one_bit_adder:add1|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add1 ; one_bit_adder             ; work         ;
+;                      |one_bit_adder:add2|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add2 ; one_bit_adder             ; work         ;
+;                   |four_bit_CLA:CLA5|        ; 4 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5                    ; four_bit_CLA              ; work         ;
+;                      |one_bit_adder:add2|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|one_bit_adder:add2 ; one_bit_adder             ; work         ;
+;                   |four_bit_CLA:CLA6|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6                    ; four_bit_CLA              ; work         ;
+;                   |four_bit_CLA:CLA7|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7                    ; four_bit_CLA              ; work         ;
+;                   |four_bit_CLA:CLA8|        ; 2 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8                    ; four_bit_CLA              ; work         ;
+;                      |one_bit_adder:add2|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add2 ; one_bit_adder             ; work         ;
+;                   |second_level_CLL:CLL1|    ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|is_less_than:is_lt1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1|second_level_CLL:CLL1                ; second_level_CLL          ; work         ;
+;          |thirty_two_bit_subtractor:subb1|   ; 77 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1                                                                                    ; thirty_two_bit_subtractor ; work         ;
+;             |thirty_two_bit_adder:adder1|    ; 77 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1                                                        ; thirty_two_bit_adder      ; work         ;
+;                |four_bit_CLA:CLA1|           ; 6 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1                                      ; four_bit_CLA              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add1                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add2                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add3                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add4                   ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA2|           ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2                                      ; four_bit_CLA              ; work         ;
+;                   |four_bit_CLL:CLL1|        ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|four_bit_CLL:CLL1                    ; four_bit_CLL              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add1                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add2                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add3                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add4                   ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA3|           ; 7 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3                                      ; four_bit_CLA              ; work         ;
+;                   |four_bit_CLL:CLL1|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|four_bit_CLL:CLL1                    ; four_bit_CLL              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|one_bit_adder:add1                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|one_bit_adder:add2                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|one_bit_adder:add3                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|one_bit_adder:add4                   ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA4|           ; 8 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4                                      ; four_bit_CLA              ; work         ;
+;                   |four_bit_CLL:CLL1|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|four_bit_CLL:CLL1                    ; four_bit_CLL              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add1                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add2                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add3                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add4                   ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA5|           ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5                                      ; four_bit_CLA              ; work         ;
+;                   |four_bit_CLL:CLL1|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|four_bit_CLL:CLL1                    ; four_bit_CLL              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|one_bit_adder:add1                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|one_bit_adder:add2                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|one_bit_adder:add3                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|one_bit_adder:add4                   ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA6|           ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6                                      ; four_bit_CLA              ; work         ;
+;                   |four_bit_CLL:CLL1|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|four_bit_CLL:CLL1                    ; four_bit_CLL              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|one_bit_adder:add1                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|one_bit_adder:add2                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|one_bit_adder:add3                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|one_bit_adder:add4                   ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA7|           ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7                                      ; four_bit_CLA              ; work         ;
+;                   |four_bit_CLL:CLL1|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|four_bit_CLL:CLL1                    ; four_bit_CLL              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|one_bit_adder:add1                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|one_bit_adder:add2                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|one_bit_adder:add3                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|one_bit_adder:add4                   ; one_bit_adder             ; work         ;
+;                |four_bit_CLA:CLA8|           ; 10 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8                                      ; four_bit_CLA              ; work         ;
+;                   |four_bit_CLL:CLL1|        ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|four_bit_CLL:CLL1                    ; four_bit_CLL              ; work         ;
+;                   |one_bit_adder:add1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add1                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add2|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add2                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add3|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add3                   ; one_bit_adder             ; work         ;
+;                   |one_bit_adder:add4|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add4                   ; one_bit_adder             ; work         ;
+;                |second_level_CLL:CLL1|       ; 21 (21)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1|thirty_two_bit_adder:adder1|second_level_CLL:CLL1                                  ; second_level_CLL          ; work         ;
+;    |my_xor:myxor1|                           ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|my_xor:myxor1                                                                                                                             ; my_xor                    ; work         ;
+;    |thirty_two_bit_adder:adder1|             ; 50 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1                                                                                                               ; thirty_two_bit_adder      ; work         ;
+;       |four_bit_CLA:CLA1|                    ; 3 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1                                                                                             ; four_bit_CLA              ; work         ;
+;          |one_bit_adder:add4|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add4                                                                          ; one_bit_adder             ; work         ;
+;       |four_bit_CLA:CLA2|                    ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2                                                                                             ; four_bit_CLA              ; work         ;
+;          |four_bit_CLL:CLL1|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|four_bit_CLL:CLL1                                                                           ; four_bit_CLL              ; work         ;
+;          |one_bit_adder:add2|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add2                                                                          ; one_bit_adder             ; work         ;
+;          |one_bit_adder:add4|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add4                                                                          ; one_bit_adder             ; work         ;
+;       |four_bit_CLA:CLA3|                    ; 3 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3                                                                                             ; four_bit_CLA              ; work         ;
+;          |four_bit_CLL:CLL1|                 ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|four_bit_CLL:CLL1                                                                           ; four_bit_CLL              ; work         ;
+;       |four_bit_CLA:CLA4|                    ; 3 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4                                                                                             ; four_bit_CLA              ; work         ;
+;          |four_bit_CLL:CLL1|                 ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|four_bit_CLL:CLL1                                                                           ; four_bit_CLL              ; work         ;
+;       |four_bit_CLA:CLA5|                    ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5                                                                                             ; four_bit_CLA              ; work         ;
+;          |four_bit_CLL:CLL1|                 ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|four_bit_CLL:CLL1                                                                           ; four_bit_CLL              ; work         ;
+;          |one_bit_adder:add4|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|one_bit_adder:add4                                                                          ; one_bit_adder             ; work         ;
+;       |four_bit_CLA:CLA6|                    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6                                                                                             ; four_bit_CLA              ; work         ;
+;          |four_bit_CLL:CLL1|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|four_bit_CLL:CLL1                                                                           ; four_bit_CLL              ; work         ;
+;          |one_bit_adder:add2|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|one_bit_adder:add2                                                                          ; one_bit_adder             ; work         ;
+;          |one_bit_adder:add3|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|one_bit_adder:add3                                                                          ; one_bit_adder             ; work         ;
+;          |one_bit_adder:add4|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|one_bit_adder:add4                                                                          ; one_bit_adder             ; work         ;
+;       |four_bit_CLA:CLA7|                    ; 3 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7                                                                                             ; four_bit_CLA              ; work         ;
+;          |one_bit_adder:add2|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|one_bit_adder:add2                                                                          ; one_bit_adder             ; work         ;
+;          |one_bit_adder:add3|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|one_bit_adder:add3                                                                          ; one_bit_adder             ; work         ;
+;       |four_bit_CLA:CLA8|                    ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8                                                                                             ; four_bit_CLA              ; work         ;
+;          |four_bit_CLL:CLL1|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|four_bit_CLL:CLL1                                                                           ; four_bit_CLL              ; work         ;
+;          |one_bit_adder:add1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add1                                                                          ; one_bit_adder             ; work         ;
+;          |one_bit_adder:add2|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add2                                                                          ; one_bit_adder             ; work         ;
+;          |one_bit_adder:add3|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add3                                                                          ; one_bit_adder             ; work         ;
+;          |one_bit_adder:add4|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add4                                                                          ; one_bit_adder             ; work         ;
+;       |second_level_CLL:CLL1|                ; 23 (23)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_adder:adder1|second_level_CLL:CLL1                                                                                         ; second_level_CLL          ; work         ;
+;    |thirty_two_bit_subtractor:sub1|          ; 37 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1                                                                                                            ; thirty_two_bit_subtractor ; work         ;
+;       |thirty_two_bit_adder:adder1|          ; 37 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1                                                                                ; thirty_two_bit_adder      ; work         ;
+;          |four_bit_CLA:CLA1|                 ; 3 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1                                                              ; four_bit_CLA              ; work         ;
+;             |one_bit_adder:add2|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add2                                           ; one_bit_adder             ; work         ;
+;          |four_bit_CLA:CLA2|                 ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2                                                              ; four_bit_CLA              ; work         ;
+;             |four_bit_CLL:CLL1|              ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|four_bit_CLL:CLL1                                            ; four_bit_CLL              ; work         ;
+;             |one_bit_adder:add2|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add2                                           ; one_bit_adder             ; work         ;
+;             |one_bit_adder:add3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add3                                           ; one_bit_adder             ; work         ;
+;             |one_bit_adder:add4|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2|one_bit_adder:add4                                           ; one_bit_adder             ; work         ;
+;          |four_bit_CLA:CLA3|                 ; 4 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3                                                              ; four_bit_CLA              ; work         ;
+;             |four_bit_CLL:CLL1|              ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|four_bit_CLL:CLL1                                            ; four_bit_CLL              ; work         ;
+;             |one_bit_adder:add4|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3|one_bit_adder:add4                                           ; one_bit_adder             ; work         ;
+;          |four_bit_CLA:CLA4|                 ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4                                                              ; four_bit_CLA              ; work         ;
+;             |four_bit_CLL:CLL1|              ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|four_bit_CLL:CLL1                                            ; four_bit_CLL              ; work         ;
+;             |one_bit_adder:add4|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4|one_bit_adder:add4                                           ; one_bit_adder             ; work         ;
+;          |four_bit_CLA:CLA5|                 ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5                                                              ; four_bit_CLA              ; work         ;
+;             |four_bit_CLL:CLL1|              ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5|four_bit_CLL:CLL1                                            ; four_bit_CLL              ; work         ;
+;          |four_bit_CLA:CLA6|                 ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6                                                              ; four_bit_CLA              ; work         ;
+;             |four_bit_CLL:CLL1|              ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|four_bit_CLL:CLL1                                            ; four_bit_CLL              ; work         ;
+;             |one_bit_adder:add4|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6|one_bit_adder:add4                                           ; one_bit_adder             ; work         ;
+;          |four_bit_CLA:CLA7|                 ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7                                                              ; four_bit_CLA              ; work         ;
+;             |four_bit_CLL:CLL1|              ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|four_bit_CLL:CLL1                                            ; four_bit_CLL              ; work         ;
+;             |one_bit_adder:add4|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7|one_bit_adder:add4                                           ; one_bit_adder             ; work         ;
+;          |four_bit_CLA:CLA8|                 ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8                                                              ; four_bit_CLA              ; work         ;
+;             |four_bit_CLL:CLL1|              ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|four_bit_CLL:CLL1                                            ; four_bit_CLL              ; work         ;
+;             |one_bit_adder:add4|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8|one_bit_adder:add4                                           ; one_bit_adder             ; work         ;
+;          |second_level_CLL:CLL1|             ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|thirty_two_bit_subtractor:sub1|thirty_two_bit_adder:adder1|second_level_CLL:CLL1                                                          ; second_level_CLL          ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |ALU|mod:mod1|mod_cu:modcu1|curr_state        ;
++---------------+---------------+---------------+---------------+
+; Name          ; curr_state.S0 ; curr_state.S2 ; curr_state.S1 ;
++---------------+---------------+---------------+---------------+
+; curr_state.S0 ; 0             ; 0             ; 0             ;
+; curr_state.S1 ; 1             ; 0             ; 1             ;
+; curr_state.S2 ; 1             ; 1             ; 0             ;
++---------------+---------------+---------------+---------------+
+
+
++------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                       ;
++---------------------------------------+--------------------------------------------------+
+; Register name                         ; Reason for Removal                               ;
++---------------------------------------+--------------------------------------------------+
+; mod:mod1|mod_dp:moddp1|x              ; Stuck at GND due to stuck port data_in           ;
+; mod:mod1|mod_cu:modcu1|curr_state.S2  ; Lost fanout                                      ;
+; mod:mod1|mod_cu:modcu1|curr_state.S1  ; Merged with mod:mod1|mod_cu:modcu1|curr_state.S0 ;
+; Total Number of Removed Registers = 3 ;                                                  ;
++---------------------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 65    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 32    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 64    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |ALU|mod:mod1|mod_dp:moddp1|temp[8] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mod:mod1|mod_dp:moddp1|thirty_two_bit_subtractor:subb1"                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; sign ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "thirty_two_bit_subtractor:sub1"                                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; sign ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "thirty_two_bit_adder:adder1"                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; cin  ; Input  ; Info     ; Stuck at GND                                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|thirty_two_bit_adder:adder1"                                                                                                         ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cin     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cin[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA8"                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; cin  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "cin[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA7"                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; cin  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "cin[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA6"                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; cin  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "cin[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA5"                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; cin  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "cin[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA4"                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; cin  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "cin[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA3"                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; cin  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "cin[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA2"                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; cin  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "cin[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|four_bit_CLL:CLL1"                                            ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                          ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cout[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; cin     ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add1"                                       ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cin  ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (1 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1"                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; cin  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "cin[3..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1"                                                                                   ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; B[31..1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; B[0]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; cin      ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; cin[-1]  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "is_less_than:lt_1|thirty_two_bit_subtractor:sub"                                    ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; R    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 65                          ;
+;     ENA               ; 32                          ;
+;     ENA SLD           ; 32                          ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 376                         ;
+;     extend            ; 21                          ;
+;         7 data inputs ; 21                          ;
+;     normal            ; 355                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 34                          ;
+;         3 data inputs ; 47                          ;
+;         4 data inputs ; 65                          ;
+;         5 data inputs ; 94                          ;
+;         6 data inputs ; 114                         ;
+; boundary_port         ; 101                         ;
+;                       ;                             ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 6.83                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sun Dec 10 21:10:06 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file thirty_two_bit_subtractor.v
+    Info (12023): Found entity 1: thirty_two_bit_subtractor File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_subtractor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file thirty_two_bit_adder.v
+    Info (12023): Found entity 1: thirty_two_bit_adder File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ALU.v
+    Info (12023): Found entity 1: ALU File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ALU_testbench.v
+    Info (12023): Found entity 1: ALU_testbench File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU_testbench.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_CLA.v
+    Info (12023): Found entity 1: four_bit_CLA File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file four_bit_CLL.v
+    Info (12023): Found entity 1: four_bit_CLL File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLL.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file is_less_than.v
+    Info (12023): Found entity 1: is_less_than File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/is_less_than.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file my_xor.v
+    Info (12023): Found entity 1: my_xor File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_xor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file my_twos_complement.v
+    Info (12023): Found entity 1: my_twos_complement File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_twos_complement.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file my_or.v
+    Info (12023): Found entity 1: my_or File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_or.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file my_nor.v
+    Info (12023): Found entity 1: my_nor File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_nor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file my_and.v
+    Info (12023): Found entity 1: my_and File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_and.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mod_dp.v
+    Info (12023): Found entity 1: mod_dp File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_dp.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mod_cu.v
+    Info (12023): Found entity 1: mod_cu File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_cu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mod.v
+    Info (12023): Found entity 1: mod File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file one_bit_adder.v
+    Info (12023): Found entity 1: one_bit_adder File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/one_bit_adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file second_level_CLA.v
+    Info (12023): Found entity 1: second_level_CLA File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/second_level_CLA.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file second_level_CLL.v
+    Info (12023): Found entity 1: second_level_CLL File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/second_level_CLL.v Line: 1
+Info (12127): Elaborating entity "ALU" for the top level hierarchy
+Info (12128): Elaborating entity "my_and" for hierarchy "my_and:myand1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v Line: 6
+Info (12128): Elaborating entity "my_or" for hierarchy "my_or:myor1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v Line: 7
+Info (12128): Elaborating entity "is_less_than" for hierarchy "is_less_than:lt_1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v Line: 8
+Info (12128): Elaborating entity "thirty_two_bit_subtractor" for hierarchy "is_less_than:lt_1|thirty_two_bit_subtractor:sub" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/is_less_than.v Line: 6
+Info (12128): Elaborating entity "my_twos_complement" for hierarchy "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_subtractor.v Line: 5
+Info (12128): Elaborating entity "thirty_two_bit_adder" for hierarchy "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_twos_complement.v Line: 39
+Warning (10739): Verilog HDL warning at thirty_two_bit_adder.v(20): actual bit length 32 differs from formal bit length 1 File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 20
+Info (12128): Elaborating entity "four_bit_CLA" for hierarchy "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 8
+Info (12128): Elaborating entity "one_bit_adder" for hierarchy "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|one_bit_adder:add1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Info (12128): Elaborating entity "four_bit_CLL" for hierarchy "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|four_bit_CLA:CLA1|four_bit_CLL:CLL1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Info (12128): Elaborating entity "second_level_CLL" for hierarchy "is_less_than:lt_1|thirty_two_bit_subtractor:sub|my_twos_complement:tws1|thirty_two_bit_adder:adder1|second_level_CLL:CLL1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 18
+Info (12128): Elaborating entity "my_xor" for hierarchy "my_xor:myxor1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v Line: 9
+Info (12128): Elaborating entity "my_nor" for hierarchy "my_nor:mynor1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v Line: 10
+Info (12128): Elaborating entity "mod" for hierarchy "mod:mod1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v Line: 13
+Info (12128): Elaborating entity "mod_cu" for hierarchy "mod:mod1|mod_cu:modcu1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod.v Line: 15
+Warning (10240): Verilog HDL Always Construct warning at mod_cu.v(25): inferring latch(es) for variable "next_state", which holds its previous value in one or more paths through the always construct File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_cu.v Line: 25
+Info (10041): Inferred latch for "next_state.S2" at mod_cu.v(25) File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_cu.v Line: 25
+Info (10041): Inferred latch for "next_state.S1" at mod_cu.v(25) File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod_cu.v Line: 25
+Info (12128): Elaborating entity "mod_dp" for hierarchy "mod:mod1|mod_dp:moddp1" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/mod.v Line: 24
+Warning (12125): Using design file _8x1Mux.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: _8x1Mux File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/_8x1Mux.v Line: 1
+Info (12128): Elaborating entity "_8x1Mux" for hierarchy "_8x1Mux:mux0" File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/ALU.v Line: 15
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA8" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 15
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA7" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 14
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA6" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 13
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA5" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 12
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA4" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 11
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA3" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA2" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 9
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA1" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 8
+Warning (12020): Port "ordered port 4" on the entity instantiation of "adder1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_subtractor.v Line: 7
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA8" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 15
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA7" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 14
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA6" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 13
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA5" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 12
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA4" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 11
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA3" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA2" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 9
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA1" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 8
+Warning (12020): Port "ordered port 4" on the entity instantiation of "adder1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_twos_complement.v Line: 39
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA8" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 15
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA7" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 14
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA6" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 13
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA5" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 12
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA4" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 11
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA3" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA2" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 9
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA1" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 8
+Warning (12020): Port "ordered port 4" on the entity instantiation of "adder1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_subtractor.v Line: 7
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA8" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 15
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA7" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 14
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA6" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 13
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA5" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 12
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA4" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 11
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA3" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA2" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 9
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA1" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 8
+Warning (12020): Port "ordered port 4" on the entity instantiation of "adder1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_twos_complement.v Line: 39
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA8" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 15
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA7" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 14
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA6" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 13
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA5" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 12
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA4" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 11
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA3" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA2" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 9
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA1" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 8
+Warning (12020): Port "ordered port 4" on the entity instantiation of "adder1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_subtractor.v Line: 7
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA8" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 15
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA7" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 14
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA6" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 13
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA5" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 12
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA4" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 11
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA3" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA2" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 9
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA1" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 8
+Warning (12020): Port "ordered port 4" on the entity instantiation of "adder1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/my_twos_complement.v Line: 39
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA8" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 15
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA7" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 14
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA6" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 13
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA5" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 12
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA4" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 11
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA3" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA2" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 9
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA1" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 8
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA8" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 15
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA7" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 14
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA6" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 13
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA5" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 12
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA4" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 11
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA3" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA2" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 9
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12010): Port "ordered port 5" on the entity instantiation of "CLA1" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be driven by GND. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/thirty_two_bit_adder.v Line: 8
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12020): Port "ordered port 3" on the entity instantiation of "CLL1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 15
+Warning (12020): Port "ordered port 5" on the entity instantiation of "add1" is connected to a signal of width 4. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/four_bit_CLA.v Line: 10
+Warning (12241): 12 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/output_files/ALU.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 509 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 69 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 408 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 217 warnings
+    Info: Peak virtual memory: 503 megabytes
+    Info: Processing ended: Sun Dec 10 21:10:14 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/aksoy/Desktop/BedirhanOmerAksoy_HW2/output_files/ALU.map.smsg.
+
+

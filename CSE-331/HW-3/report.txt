@@ -1,0 +1,8 @@
+In my project, 
+    * Move instruction works problemless and fine.
+    * All R type instructions works problemless and fine.
+    * Instead of (beq, bne) instructions, rest of the I type instructions works problemless and fine.
+    * Jump instructions has their modules but doesn't work.
+    * Program Counter is working but program cannot take multiple instructions. Program only process the zero'th instruction.
+    * Load and store operations works problemless.
+    * Load byte operation fills the last 24 bit with 0's.

@@ -1,0 +1,16 @@
+Catalog Read: music
+Exception: missing field: 
+"It was a good day" "Ice Cube" "2017" 
+Exception: duplicate entry: 
+"Vicdanin affetsin" "bedirhan aksoy" "2023" "Duplicate"
+Exception: command is wrong: 
+search "Ahmet" in "non-field"
+search "Rap" in "genre"
+"My life be like" "Grits" "2011" "Rap"
+search "Rap" in "genre"
+"We own it" "Wiz Khalifa" "2014" "Rap"
+sort "genre"
+"Vicdanin affetsin" "Merve Ozbey" "2012" "Pop"
+"My life be like" "Grits" "2011" "Rap"
+"We own it" "Wiz Khalifa" "2014" "Rap"
+"Cokertme Turkusu" "Ahmet Aslan" "1998" "Turku"

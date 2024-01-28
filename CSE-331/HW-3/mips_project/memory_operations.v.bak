@@ -1,0 +1,11 @@
+module memory_operations(output reg[31:0] content);
+
+	reg [31:0] registers [31:0];
+
+	initial begin
+		$readmemb("registers.mem", registers);
+		content = registers[0];
+	end
+
+
+endmodule
